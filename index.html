@@ -1,1158 +1,361 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ইংরেজি ব্যাকরণ পাঠ – Interjections, Negative & Interrogative Sentences</title>
-<style>
-  :root {
-    --primary: #1a5f7a;
-    --primary-dark: #0d3b4d;
-    --accent: #159895;
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #1e293b;
-    --muted: #64748b;
-    --success: #10b981;
-    --danger: #ef4444;
-    --warning: #f59e0b;
-    --border: #e2e8f0;
-    --sidebar-w: 280px;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Noto Sans Bengali', 'Hind Siliguri', 'SolaimanLipi', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    display: flex;
-    min-height: 100vh;
-  }
-  /* Sidebar */
-  .sidebar {
-    width: var(--sidebar-w);
-    background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    position: fixed;
-    top: 0; left: 0; bottom: 0;
-    overflow-y: auto;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
-  }
-  .sidebar.collapsed { transform: translateX(-100%); }
-  .sidebar-header {
-    padding: 1.5rem 1.2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .sidebar-header h1 { font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
-  .nav-item {
-    display: block;
-    padding: 0.85rem 1.4rem;
-    color: rgba(255,255,255,0.9);
-    text-decoration: none;
-    font-size: 0.95rem;
-    border-left: 4px solid transparent;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-  .nav-item:hover, .nav-item.active {
-    background: rgba(255,255,255,0.12);
-    border-left-color: #fbbf24;
-    color: white;
-  }
-  .nav-section-title {
-    padding: 1rem 1.4rem 0.4rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.6;
-  }
-  /* Main */
-  .main {
-    flex: 1;
-    margin-left: var(--sidebar-w);
-    transition: margin 0.3s;
-    min-height: 100vh;
-  }
-  .main.full { margin-left: 0; }
-  .topbar {
-    background: white;
-    padding: 0.85rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  }
-  .menu-btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    width: 42px; height: 42px;
-    border-radius: 10px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .topbar-title { font-weight: 700; font-size: 1.1rem; color: var(--primary-dark); }
-  .top-actions { margin-left: auto; display: flex; gap: 0.6rem; flex-wrap: wrap; }
-  .btn {
-    padding: 0.55rem 1.1rem;
-    border-radius: 8px;
-    border: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: all 0.2s;
-  }
-  .btn-primary { background: var(--primary); color: white; }
-  .btn-primary:hover { background: var(--primary-dark); }
-  .btn-accent { background: var(--accent); color: white; }
-  .btn-outline { background: white; border: 1.5px solid var(--border); color: var(--text); }
-  .btn-success { background: var(--success); color: white; }
-  .btn-danger { background: var(--danger); color: white; }
-  .btn-warning { background: var(--warning); color: white; }
-  .content { padding: 1.75rem; max-width: 920px; margin: 0 auto; }
-  .section { display: none; animation: fadeIn 0.35s ease; }
-  .section.active { display: block; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-  h2 {
-    font-size: 1.65rem;
-    color: var(--primary-dark);
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 3px solid var(--accent);
-  }
-  h3 {
-    font-size: 1.25rem;
-    color: var(--primary);
-    margin: 1.6rem 0 0.8rem;
-  }
-  h4 { font-size: 1.05rem; color: var(--primary-dark); margin: 1.2rem 0 0.5rem; }
-  p, li { margin-bottom: 0.7rem; font-size: 1.02rem; }
-  ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
-  .card {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 1.3rem 1.5rem;
-    margin-bottom: 1.3rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-    border: 1px solid var(--border);
-  }
-  .rule-box {
-    background: #f0f9ff;
-    border-left: 5px solid var(--primary);
-    padding: 1rem 1.2rem;
-    margin: 1rem 0;
-    border-radius: 0 10px 10px 0;
-  }
-  .note-box {
-    background: #fffbeb;
-    border-left: 5px solid var(--warning);
-    padding: 1rem 1.2rem;
-    margin: 1rem 0;
-    border-radius: 0 10px 10px 0;
-  }
-  .exception-box {
-    background: #fef2f2;
-    border-left: 5px solid var(--danger);
-    padding: 1rem 1.2rem;
-    margin: 1rem 0;
-    border-radius: 0 10px 10px 0;
-  }
-  .example {
-    background: #f1f5f9;
-    padding: 0.8rem 1.1rem;
-    border-radius: 8px;
-    margin: 0.6rem 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.95rem;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.95rem;
-  }
-  th, td {
-    border: 1px solid var(--border);
-    padding: 0.65rem 0.9rem;
-    text-align: left;
-  }
-  th { background: var(--primary); color: white; }
-  tr:nth-child(even) { background: #f8fafc; }
-  .voice-btn {
-    background: #8b5cf6;
-    color: white;
-    border: none;
-    padding: 0.4rem 0.9rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    margin: 0.3rem 0.3rem 0.3rem 0;
-  }
-  .voice-btn:hover { background: #7c3aed; }
-  .voice-btn.speaking { background: #ef4444; }
-  /* Quiz */
-  .quiz-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.4rem;
-    margin-bottom: 1.2rem;
-  }
-  .q-num { font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
-  .options label {
-    display: block;
-    padding: 0.65rem 1rem;
-    margin: 0.4rem 0;
-    background: #f8fafc;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.2s;
-  }
-  .options label:hover { border-color: var(--accent); background: #ecfeff; }
-  .options input { margin-right: 0.6rem; }
-  .options label.correct { background: #d1fae5; border-color: var(--success); }
-  .options label.wrong { background: #fee2e2; border-color: var(--danger); }
-  .score-box {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
-    padding: 1.5rem;
-    border-radius: 14px;
-    text-align: center;
-    margin: 1.5rem 0;
-  }
-  .score-box h3 { color: white; margin: 0 0 0.5rem; }
-  .timer {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--danger);
-    background: #fef2f2;
-    padding: 0.5rem 1.2rem;
-    border-radius: 8px;
-    display: inline-block;
-  }
-  .exam-controls { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; align-items: center; }
-  .progress-bar {
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 1rem 0;
-  }
-  .progress-fill { height: 100%; background: var(--accent); transition: width 0.3s; }
-  /* Print */
-  @media print {
-    .sidebar, .topbar, .voice-btn, .btn, .exam-controls, .no-print { display: none !important; }
-    .main { margin-left: 0 !important; }
-    .section { display: block !important; page-break-inside: avoid; }
-    .card, .rule-box, .note-box { box-shadow: none; border: 1px solid #ccc; }
-    body { font-size: 11pt; }
-  }
-  @media (max-width: 768px) {
-    .sidebar { transform: translateX(-100%); }
-    .sidebar.open { transform: translateX(0); }
-    .main { margin-left: 0; }
-  }
-  .bn { font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif; }
-  .en { font-family: Georgia, serif; font-style: italic; color: #475569; }
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="description" content="ইংরেজি ব্যাকরণ মাস্টার - Interjections, Negative & Interrogative Sentences সম্পূর্ণ ইন্টারঅ্যাকটিভ পাঠ। ১০০টি প্রশ্ন, Exam Mode, Voice Support, Offline PWA।">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ইংরেজি ব্যাকরণ মাস্টার | Grammar Master</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<!-- Sidebar -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <span style="font-size:1.8rem">📚</span>
-    <h1>ইংরেজি ব্যাকরণ<br><small style="font-size:0.75rem;opacity:0.85">Interjection • Negative • Interrogative</small></h1>
+  <div class="loading-overlay" id="loader">
+    <div class="spinner"></div>
   </div>
-  <div class="nav-section-title">পাঠ্যসূচি</div>
-  <a class="nav-item active" data-section="home">🏠 মূল পাতা</a>
-  <a class="nav-item" data-section="interjection">১. Interjection (বিস্ময়সূচক শব্দ)</a>
-  <a class="nav-item" data-section="negative">২. Negative Sentences</a>
-  <a class="nav-item" data-section="interrogative">৩. Interrogative Sentences</a>
-  <a class="nav-item" data-section="whwords">৪. Wh-Question Words (সম্পূর্ণ)</a>
-  <a class="nav-item" data-section="rules-summary">৫. সকল নিয়ম ও ব্যতিক্রম সারাংশ</a>
-  <div class="nav-section-title">অনুশীলন ও পরীক্ষা</div>
-  <a class="nav-item" data-section="practice">📝 ১০০টি অনুশীলনী প্রশ্ন</a>
-  <a class="nav-item" data-section="exam">⏱️ Exam Mode</a>
-  <div class="nav-section-title">অন্যান্য</div>
-  <a class="nav-item" data-section="canva-design">🎨 Canva প্রেজেন্টেশন</a>
-  <a class="nav-item" data-section="print-help">🖨️ প্রিন্ট গাইড</a>
-</aside>
 
-<!-- Main Content -->
-<div class="main" id="main">
-  <div class="topbar">
-    <button class="menu-btn" id="menuBtn" title="মেনু">☰</button>
-    <div class="topbar-title" id="pageTitle">মূল পাতা</div>
-    <div class="top-actions">
-      <button class="btn btn-outline" onclick="window.print()">🖨️ প্রিন্ট</button>
-      <button class="btn btn-accent" id="globalVoiceBtn" onclick="toggleGlobalVoice()">🔊 কণ্ঠস্বর চালু</button>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">📚</div>
+      <h1>Grammar Master<br><small>Interjection • Negative • Interrogative</small></h1>
+    </div>
+
+    <div class="nav-section-title">পাঠ্যসূচি</div>
+    <a class="nav-item active" data-section="home"><span class="icon">🏠</span> মূল পাতা</a>
+    <a class="nav-item" data-section="interjection"><span class="icon">😮</span> ১. Interjection</a>
+    <a class="nav-item" data-section="negative"><span class="icon">🚫</span> ২. Negative Sentences</a>
+    <a class="nav-item" data-section="interrogative"><span class="icon">❓</span> ৩. Interrogative</a>
+    <a class="nav-item" data-section="whwords"><span class="icon">🔤</span> ৪. Wh-Question Words</a>
+    <a class="nav-item" data-section="rules-summary"><span class="icon">📋</span> ৫. নিয়ম সারাংশ</a>
+
+    <div class="nav-section-title">অনুশীলন ও পরীক্ষা</div>
+    <a class="nav-item" data-section="practice"><span class="icon">📝</span> ১০০টি প্রশ্ন</a>
+    <a class="nav-item" data-section="exam"><span class="icon">⏱️</span> Exam Mode</a>
+
+    <div class="nav-section-title">অন্যান্য</div>
+    <a class="nav-item" data-section="canva-design"><span class="icon">🎨</span> Canva প্রেজেন্টেশন</a>
+    <a class="nav-item" data-section="print-help"><span class="icon">🖨️</span> প্রিন্ট গাইড</a>
+
+    <div class="sidebar-footer">
+      Grammar Master v2.0<br>Offline PWA Ready
+    </div>
+  </aside>
+
+  <div class="main" id="main">
+    <div class="topbar">
+      <button class="menu-btn" id="menuBtn" title="মেনু">☰</button>
+      <div class="topbar-title" id="pageTitle">মূল পাতা</div>
+      <div class="top-actions">
+        <button class="theme-btn" id="themeBtn" title="থিম পরিবর্তন">🌙</button>
+        <button class="btn btn-outline no-print" onclick="window.print()">🖨️ <span>প্রিন্ট</span></button>
+        <button class="btn btn-accent no-print" id="globalVoiceBtn" onclick="toggleGlobalVoice()">🔊 কণ্ঠস্বর</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <section class="section active" id="home">
+        <div class="hero">
+          <h2>স্বাগতম — Grammar Master</h2>
+          <p>সম্পূর্ণ ইন্টারঅ্যাকটিভ ইংরেজি ব্যাকরণ পাঠ</p>
+          <p style="font-size:0.95rem;opacity:0.9">Interjections • Negative Sentences • Interrogative Sentences • Wh-words</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card" onclick="navigateTo('interjection')">
+            <div class="f-icon">😮</div>
+            <h4>Interjections</h4>
+            <p>বিস্ময়সূচক শব্দ ও বাক্যাংশ</p>
+          </div>
+          <div class="feature-card" onclick="navigateTo('negative')">
+            <div class="f-icon">🚫</div>
+            <h4>Negative</h4>
+            <p>সব ধরনের নেগেটিভ গঠন</p>
+          </div>
+          <div class="feature-card" onclick="navigateTo('interrogative')">
+            <div class="f-icon">❓</div>
+            <h4>Interrogative</h4>
+            <p>Yes/No ও Wh-প্রশ্ন</p>
+          </div>
+          <div class="feature-card" onclick="navigateTo('practice')">
+            <div class="f-icon">📝</div>
+            <h4>১০০টি প্রশ্ন</h4>
+            <p>MCQ অনুশীলন</p>
+          </div>
+          <div class="feature-card" onclick="navigateTo('exam')">
+            <div class="f-icon">⏱️</div>
+            <h4>Exam Mode</h4>
+            <p>সময় নিয়ে পরীক্ষা</p>
+          </div>
+          <div class="feature-card" onclick="navigateTo('canva-design')">
+            <div class="f-icon">🎨</div>
+            <h4>Canva Design</h4>
+            <p>ভিজ্যুয়াল স্লাইড</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>কীভাবে ব্যবহার করবেন</h3>
+          <ol>
+            <li>বাম দিকের <strong>মেনু</strong> থেকে যেকোনো অধ্যায় বেছে নিন।</li>
+            <li>প্রতিটি অংশে <strong>🔊 শুনুন</strong> বাটন চাপলে মানবসদৃশ কণ্ঠে পড়া হবে।</li>
+            <li><strong>১০০টি প্রশ্ন</strong> দিয়ে অনুশীলন করুন।</li>
+            <li><strong>Exam Mode</strong>-এ সময় নিয়ে পরীক্ষা দিন ও স্কোর দেখুন।</li>
+            <li>🌙 বাটন দিয়ে ডার্ক/লাইট মোড পরিবর্তন করুন।</li>
+            <li>অফলাইনেও কাজ করে (PWA)।</li>
+          </ol>
+        </div>
+
+        <div class="card" style="border-left: 5px solid var(--success);">
+          <h3>🎯 শেখার লক্ষ্য</h3>
+          <p>পাঠ শেষে আপনি যেকোনো affirmative বাক্যকে negative ও interrogative-এ রূপান্তর করতে পারবেন এবং সঠিক Wh-word দিয়ে প্রশ্ন তৈরি করতে পারবেন।</p>
+        </div>
+      </section>
+
+      <section class="section" id="interjection">
+        <h2>😮 অধ্যায় ২৪ — Interjections</h2>
+        <button class="voice-btn" onclick="speakSection('interjection')">🔊 এই অংশ শুনুন</button>
+        <div class="card">
+          <h3>[২৯৫] Interjection কী?</h3>
+          <p>Interjection আসলে speech-এর অংশ নয়, কারণ এটি বাক্যের গঠনে (construction) প্রবেশ করে না। এটি শুধু আবেগ প্রকাশ করে।</p>
+          <div class="example">
+            Ah! / Alas! → দুঃখ (grief)<br>
+            Hurrah! → আনন্দ (joy)<br>
+            Fie! → তিরস্কার (reproof)<br>
+            Tut! Tut! / Pish! → ঘৃণা বা অবজ্ঞা (disgust/contempt)<br>
+            Hark! / Hush! / Lo! → মনোযোগ আকর্ষণ (attention)<br>
+            Bravo! / Hear! → অনুমোদন (approval)<br>
+            Ho! / Hallo! → ডাক (a call)
+          </div>
+        </div>
+        <div class="card">
+          <h3>[২৯৬] (a) Interjectional Phrases</h3>
+          <p>অনেক বাক্যাংশ interjectionally ব্যবহৃত হয় এবং বাক্যের গঠনের অংশ হয় না:</p>
+          <div class="example">For shame! &nbsp; Good gracious! &nbsp; Good heavens!</div>
+        </div>
+        <div class="card">
+          <h3>[২৯৬] (b) Elliptical Sentences (Interjection নয়)</h3>
+          <p>নিচের মতো কিছু শব্দগুচ্ছ interjectional চরিত্রের হলেও সেগুলো Interjection নয় — সেগুলো elliptical sentence:</p>
+          <div class="example">
+            How awful! = How awful it is!<br>
+            What a mess! = What a mess it is!<br>
+            Well done! = It is done well!
+          </div>
+          <div class="note-box">
+            <strong>মনে রাখুন:</strong> এগুলোতে বিস্ময়বোধক চিহ্ন থাকলেও সেগুলো পূর্ণ বাক্যের সংক্ষিপ্ত রূপ।
+          </div>
+        </div>
+        <div class="card">
+          <h3>অনুশীলন ৩৪ — উদাহরণ</h3>
+          <ul>
+            <li>Joy → Hurrah! We have won the match.</li>
+            <li>Surprise → Oh! What a beautiful sight!</li>
+            <li>Attention → Hark! Someone is calling.</li>
+            <li>Approval → Bravo! Excellent work.</li>
+            <li>Sorrow → Alas! He is no more.</li>
+            <li>Caution → Hush! The baby is sleeping.</li>
+            <li>Despair → Ah! All is lost.</li>
+            <li>Contempt → Fie! How dare you!</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="negative">
+        <h2>🚫 অধ্যায় ২৫ — Negative Sentences</h2>
+        <button class="voice-btn" onclick="speakSection('negative')">🔊 এই অংশ শুনুন</button>
+        <div class="card">
+          <h3>[২৯৭] সাধারণ নিয়ম</h3>
+          <p>Negative sentence সাধারণত <strong>no</strong> এবং <strong>not</strong> ব্যবহার করে গঠিত হয়।</p>
+        </div>
+        <div class="card">
+          <h3>(a) Verb “to be”</h3>
+          <div class="rule-box"><strong>নিয়ম:</strong> “not” verb-এর পরে বসে।</div>
+          <table>
+            <tr><th>Negative</th><th>উদাহরণ</th></tr>
+            <tr><td>I am not a student.</td><td>We are not students.</td></tr>
+            <tr><td>You are not a doctor.</td><td>You are not doctors.</td></tr>
+            <tr><td>He is not a businessman.</td><td>They are not businessmen.</td></tr>
+            <tr><td>He was not happy.</td><td>The boys were not present.</td></tr>
+          </table>
+          <p>কখনো <strong>no</strong> ও ব্যবহার হয়:</p>
+          <div class="example">There is no student in the class room.<br>He is no friend of mine.</div>
+        </div>
+        <div class="card">
+          <h3>(b) Verb “to have”</h3>
+          <div class="rule-box"><strong>নিয়ম:</strong> সাধারণত “no” verb-এর পরে বসে।</div>
+          <div class="note-box">
+            <strong>নোট:</strong> do/does/did not + have দিয়েও করা যায়।
+            <div class="example">I do not have any car. (বা I have no car.)</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>(c) অন্যান্য Principal Verb</h3>
+          <div class="rule-box">Present → do/does not + base &nbsp;|&nbsp; Past → did not + base</div>
+          <div class="example">I do not know him.<br>He does not help his brother.<br>You did not come yesterday.</div>
+        </div>
+        <div class="card">
+          <h3>[২৯৮] Auxiliary Verb</h3>
+          <div class="rule-box">“not” সবসময় প্রথম auxiliary-এর পরে বসে।</div>
+          <div class="example">You will not be happy.<br>You should not have done this.</div>
+        </div>
+        <div class="card">
+          <h3>[২৯৯] Negative Imperative</h3>
+          <div class="rule-box">Do not + verb</div>
+          <div class="example">Do not run in the sun.<br>Do not tell a lie.</div>
+        </div>
+        <div class="card">
+          <h3>[৩০০] no/not ছাড়া Negative</h3>
+          <div class="example">He never tells a lie.<br>None of them was present.<br>I know nothing about this.</div>
+        </div>
+      </section>
+
+      <section class="section" id="interrogative">
+        <h2>❓ অধ্যায় ২৬ — Interrogative Sentences</h2>
+        <button class="voice-btn" onclick="speakSection('interrogative')">🔊 এই অংশ শুনুন</button>
+        <div class="card">
+          <h3>[৩০১] Interrogative কী?</h3>
+          <ul>
+            <li><strong>Yes/No Questions</strong></li>
+            <li><strong>Wh-Questions</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>[৩০২] Yes/No গঠন</h3>
+          <div class="rule-box">to be / to have → Verb + Subject?<br>অন্যান্য → Do/Does/Did + Subject + base?</div>
+          <div class="example">Is he well?<br>Do you live in Delhi?<br>Did he call you?</div>
+        </div>
+        <div class="card">
+          <h3>[৩০৩] Auxiliary</h3>
+          <div class="rule-box">Auxiliary + Subject … ? (শুধু প্রথম auxiliary)</div>
+          <div class="example">Can he swim?<br>Should you have gone there?</div>
+        </div>
+        <div class="card">
+          <h3>[৩০৪] Negative Interrogative</h3>
+          <div class="rule-box">Noun → not আগে &nbsp;|&nbsp; Pronoun → not পরে<br>Contracted form সবসময় Subject-এর আগে</div>
+          <div class="example">Is not Prafulla strong?<br>Is he not strong?<br>Wasn't Biren ill?</div>
+        </div>
+      </section>
+
+      <section class="section" id="whwords">
+        <h2>🔤 Wh-Question Words</h2>
+        <button class="voice-btn" onclick="speakSection('whwords')">🔊 এই অংশ শুনুন</button>
+        <div class="card">
+          <h3>Who / Whom / Whose / What / Which / Why / When / Where / How</h3>
+          <div class="example">
+            Who is that man?<br>
+            Whom did you see? → Who did you see? (কথ্য)<br>
+            Whose books are these?<br>
+            What is he? (পেশা)<br>
+            Which boy did it?<br>
+            Why was he absent?<br>
+            When will he come?<br>
+            Where do you live?<br>
+            How did you come? / How tall is it?
+          </div>
+          <div class="exception-box">
+            Who/What/Which subject হলে auxiliary লাগে না।<br>
+            Who goes there? (সঠিক)
+          </div>
+          <div class="note-box">
+            Who is he? = নাম &nbsp;|&nbsp; What is he? = পেশা &nbsp;|&nbsp; Which is he? = দলের মধ্যে কোন জন
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="rules-summary">
+        <h2>📋 নিয়ম সারাংশ</h2>
+        <button class="voice-btn" onclick="speakSection('rules-summary')">🔊 এই অংশ শুনুন</button>
+        <div class="card">
+          <h3>Negative</h3>
+          <ol>
+            <li>to be → not verb-এর পরে</li>
+            <li>to have → no / do-does-did not + have</li>
+            <li>অন্যান্য → do/does/did not + base</li>
+            <li>Auxiliary → not প্রথম auxiliary-এর পরে</li>
+            <li>Imperative → Do not + verb</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Interrogative</h3>
+          <ol>
+            <li>to be/have → Verb + Subject?</li>
+            <li>অন্যান্য → Do/Does/Did + Subject + base?</li>
+            <li>Auxiliary → Auxiliary + Subject?</li>
+            <li>Who/What/Which subject → auxiliary নেই</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="practice">
+        <h2>📝 ১০০টি অনুশীলনী প্রশ্ন</h2>
+        <p class="no-print">উত্তর নির্বাচন করুন। শেষে “উত্তর দেখুন” চাপুন।</p>
+        <div id="practiceContainer"></div>
+        <div style="text-align:center;margin:2rem 0;" class="no-print">
+          <button class="btn btn-primary" onclick="checkPractice()">✅ সব উত্তর পরীক্ষা করুন</button>
+          <button class="btn btn-outline" onclick="resetPractice()">🔄 রিসেট</button>
+        </div>
+        <div id="practiceResult" class="score-box" style="display:none;"></div>
+      </section>
+
+      <section class="section" id="exam">
+        <h2>⏱️ Exam Mode</h2>
+        <div class="exam-controls no-print">
+          <label>প্রশ্নের সংখ্যা:
+            <select id="examQCount">
+              <option value="10">১০টি</option>
+              <option value="20" selected>২০টি</option>
+              <option value="30">৩০টি</option>
+              <option value="50">৫০টি</option>
+            </select>
+          </label>
+          <label>সময় (মিনিট):
+            <select id="examTime">
+              <option value="5">৫</option>
+              <option value="10" selected>১০</option>
+              <option value="15">১৫</option>
+              <option value="20">২০</option>
+            </select>
+          </label>
+          <button class="btn btn-success" id="startExamBtn" onclick="startExam()">পরীক্ষা শুরু করুন</button>
+          <button class="btn btn-danger" id="submitExamBtn" style="display:none;" onclick="submitExam()">জমা দিন</button>
+        </div>
+        <div id="examTimer" class="timer" style="display:none;"></div>
+        <div class="progress-bar no-print" id="examProgress" style="display:none;">
+          <div class="progress-fill" id="examProgressFill" style="width:0%"></div>
+        </div>
+        <div id="examContainer"></div>
+        <div id="examResult" class="score-box" style="display:none;"></div>
+      </section>
+
+      <section class="section" id="canva-design">
+        <h2>🎨 Canva প্রেজেন্টেশন</h2>
+        <div class="canva-banner">
+          <h3>ইংরেজি ব্যাকরণ পাঠ — Canva Design</h3>
+          <p>Canva AI দিয়ে তৈরি প্রেজেন্টেশন।</p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0;">
+            <a href="https://www.canva.com/d/A6KsqsKpi9IxNc8" target="_blank" class="btn btn-primary" style="text-decoration:none;">👁️ প্রেজেন্টেশন দেখুন</a>
+            <a href="https://www.canva.com/d/CIaLtNLd5wi6eed" target="_blank" class="btn btn-accent" style="text-decoration:none;">✏️ এডিট করুন</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="print-help">
+        <h2>🖨️ প্রিন্ট গাইড</h2>
+        <div class="card">
+          <p>প্রিন্ট বাটন বা Ctrl+P দিলে শুধু পাঠের বিষয়বস্তু প্রিন্ট হবে।</p>
+          <ul>
+            <li>A4 পোর্ট্রেট মোড সুপারিশ করা হয়।</li>
+            <li>Background graphics চালু রাখুন যদি রঙ চান।</li>
+          </ul>
+        </div>
+      </section>
     </div>
   </div>
 
-  <div class="content">
-    <!-- HOME -->
-    <section class="section active" id="home">
-      <h2>স্বাগতম — সম্পূর্ণ পাঠ এক জায়গায়</h2>
-      <div class="card">
-        <p>এই ইন্টারঅ্যাকটিভ পাঠে আপনি শিখবেন:</p>
-        <ul>
-          <li><strong>Interjections</strong> — বিস্ময়, আনন্দ, দুঃখ ইত্যাদি প্রকাশক শব্দ ও বাক্যাংশ</li>
-          <li><strong>Negative Sentences</strong> — সব ধরনের নেগেটিভ গঠন (to be, to have, অন্যান্য verb, auxiliary, imperative, no/not ছাড়াও)</li>
-          <li><strong>Interrogative Sentences</strong> — Yes/No ও Wh-প্রশ্ন, সকল নিয়ম, ব্যতিক্রম ও নোট</li>
-        </ul>
-        <p>প্রতিটি নিয়ম, নোট ও ব্যতিক্রম মূল পাঠ্যবই থেকে নেওয়া হয়েছে। কোনো নিয়ম বাদ দেওয়া হয়নি।</p>
-      </div>
-      <div class="card">
-        <h3>কীভাবে ব্যবহার করবেন</h3>
-        <ol>
-          <li>বাম দিকের <strong>মেনু</strong> থেকে যেকোনো অধ্যায় বেছে নিন।</li>
-          <li>প্রতিটি অংশে <strong>🔊 শুনুন</strong> বাটন চাপলে মানবসদৃশ কণ্ঠে পড়া হবে (বাংলা/ইংরেজি)।</li>
-          <li><strong>১০০টি প্রশ্ন</strong> দিয়ে অনুশীলন করুন।</li>
-          <li><strong>Exam Mode</strong>-এ সময় নিয়ে পরীক্ষা দিন ও স্কোর দেখুন।</li>
-          <li>প্রয়োজনে <strong>প্রিন্ট</strong> বাটন দিয়ে নোট প্রিন্ট করুন।</li>
-        </ol>
-      </div>
-      <div class="card" style="background:#ecfdf5;border-color:#10b981;">
-        <h3>🎯 শেখার লক্ষ্য</h3>
-        <p>পাঠ শেষে আপনি যেকোনো affirmative বাক্যকে negative ও interrogative-এ রূপান্তর করতে পারবেন এবং সঠিক Wh-word দিয়ে প্রশ্ন তৈরি করতে পারবেন।</p>
-      </div>
-    </section>
-
-    <!-- INTERJECTION -->
-    <section class="section" id="interjection">
-      <h2>অধ্যায় ২৪ — Interjections (বিস্ময়সূচক অব্যয়)</h2>
-      <button class="voice-btn" onclick="speakSection('interjection')">🔊 এই অংশ শুনুন</button>
-
-      <div class="card">
-        <h3>[২৯৫] Interjection কী?</h3>
-        <p>Interjection আসলে speech-এর অংশ নয়, কারণ এটি বাক্যের গঠনে (construction) প্রবেশ করে না। এটি শুধু আবেগ প্রকাশ করে।</p>
-        <div class="example">
-          Ah! / Alas! → দুঃখ (grief)<br>
-          Hurrah! → আনন্দ (joy)<br>
-          Fie! → তিরস্কার (reproof)<br>
-          Tut! Tut! / Pish! → ঘৃণা বা অবজ্ঞা (disgust/contempt)<br>
-          Hark! / Hush! / Lo! → মনোযোগ আকর্ষণ (attention)<br>
-          Bravo! / Hear! → অনুমোদন (approval)<br>
-          Ho! / Hallo! → ডাক (a call)
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>[২৯৬] (a) Interjectional Phrases</h3>
-        <p>অনেক বাক্যাংশ interjectionally ব্যবহৃত হয় এবং বাক্যের গঠনের অংশ হয় না:</p>
-        <div class="example">For shame! &nbsp; Good gracious! &nbsp; Good heavens!</div>
-      </div>
-
-      <div class="card">
-        <h3>[২৯৬] (b) Elliptical Sentences (Interjection নয়)</h3>
-        <p>নিচের মতো কিছু শব্দগুচ্ছ interjectional চরিত্রের হলেও সেগুলো Interjection নয় — সেগুলো elliptical sentence:</p>
-        <div class="example">
-          How awful! = How awful it is!<br>
-          What a mess! = What a mess it is!<br>
-          Well done! = It is done well!
-        </div>
-        <div class="note-box">
-          <strong>মনে রাখুন:</strong> এগুলোতে বিস্ময়বোধক চিহ্ন থাকলেও সেগুলো পূর্ণ বাক্যের সংক্ষিপ্ত রূপ।
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>অনুশীলন ৩৪ — উদাহরণ</h3>
-        <p><strong>(a) বিভিন্ন আবেগ প্রকাশক Interjection দিয়ে বাক্য:</strong></p>
-        <ul>
-          <li>Joy → Hurrah! We have won the match.</li>
-          <li>Surprise → Oh! What a beautiful sight!</li>
-          <li>Attention → Hark! Someone is calling.</li>
-          <li>Approval → Bravo! Excellent work.</li>
-          <li>Sorrow → Alas! He is no more.</li>
-          <li>Caution → Hush! The baby is sleeping.</li>
-          <li>Despair → Ah! All is lost.</li>
-          <li>Contempt → Fie! How dare you!</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- NEGATIVE -->
-    <section class="section" id="negative">
-      <h2>অধ্যায় ২৫ — Negative Sentences</h2>
-      <button class="voice-btn" onclick="speakSection('negative')">🔊 এই অংশ শুনুন</button>
-
-      <div class="card">
-        <h3>[২৯৭] সাধারণ নিয়ম</h3>
-        <p>Negative sentence সাধারণত <strong>no</strong> এবং <strong>not</strong> ব্যবহার করে গঠিত হয়।</p>
-      </div>
-
-      <div class="card">
-        <h3>(a) Verb “to be” (am, is, are, was, were) Principal verb হলে</h3>
-        <div class="rule-box">
-          <strong>নিয়ম:</strong> “not” verb-এর পরে বসে।
-        </div>
-        <table>
-          <tr><th>Negative</th><th>উদাহরণ</th></tr>
-          <tr><td>I am not a student.</td><td>We are not students.</td></tr>
-          <tr><td>You are not a doctor.</td><td>You are not doctors.</td></tr>
-          <tr><td>He is not a businessman.</td><td>They are not businessmen.</td></tr>
-          <tr><td>He was not happy.</td><td>The boys were not present.</td></tr>
-          <tr><td>I was not ill.</td><td>You were not at home.</td></tr>
-        </table>
-        <p>কখনো <strong>no</strong> ও ব্যবহার হয়:</p>
-        <div class="example">There is no student in the class room.<br>He is no friend of mine.<br>Miss Green is no beauty.</div>
-      </div>
-
-      <div class="card">
-        <h3>(b) Verb “to have” (has, have, had) Principal verb হলে</h3>
-        <div class="rule-box">
-          <strong>নিয়ম:</strong> সাধারণত “no” verb-এর পরে বসে।
-        </div>
-        <table>
-          <tr><th>Negative</th><th>উদাহরণ</th></tr>
-          <tr><td>I have no car.</td><td>We have no house.</td></tr>
-          <tr><td>You have no sister.</td><td>You had no brother.</td></tr>
-          <tr><td>He has no servant.</td><td>They have no friend here.</td></tr>
-          <tr><td>I had no money.</td><td>We had no dog.</td></tr>
-        </table>
-        <div class="note-box">
-          <strong>নোট (গুরুত্বপূর্ণ):</strong> “to have” কে Principal verb হিসেবে ব্যবহার করলে Present-এ do not / does not এবং Past-এ did not দিয়েও negative করা যায়। মূল verb-এর form অপরিবর্তিত থাকে।
-          <div class="example">
-            I do not have any car. (বা I have no car.)<br>
-            He does not have any car. (বা He has no car.)<br>
-            I did not have any money. (বা I had no money.)
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>(c) অন্যান্য Principal Verb (to be ও to have ছাড়া)</h3>
-        <div class="rule-box">
-          Present → do not / does not + মূল verb (base form)<br>
-          Past → did not + মূল verb (base form)
-        </div>
-        <div class="example">
-          I do not know him.<br>
-          He does not help his brother.<br>
-          You did not come yesterday.<br>
-          Ram did not play.<br>
-          We do not like him.
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>[২৯৮] Auxiliary Verb থাকলে</h3>
-        <div class="rule-box">
-          “not” সবসময় <strong>প্রথম auxiliary</strong>-এর পরে বসে।
-        </div>
-        <div class="example">
-          You will not be happy.<br>
-          She cannot sing.<br>
-          He is not laughing.<br>
-          You have not done the job.<br>
-          I was not taking bath.
-        </div>
-        <div class="note-box">
-          <strong>নোট (a):</strong> একাধিক auxiliary থাকলে not শুধু প্রথমটির পরে বসে।
-          <div class="example">You should not have done this.<br>He has not been coming to school since Friday last.</div>
-        </div>
-        <div class="note-box">
-          <strong>নোট (b):</strong> will have / shall have-এর পরে “no” বসিয়েও negative করা যায় (no-এর পরে noun থাকে)।
-          <div class="example">You will have no holiday today.<br>I shall have no medicine now.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>[২৯৯] Negative Imperative</h3>
-        <div class="rule-box">Do not + মূল verb</div>
-        <div class="example">Do not run in the sun.<br>Do not tell a lie.<br>Do not quarrel with others.</div>
-      </div>
-
-      <div class="card">
-        <h3>[৩০০] no / not ছাড়া Negative</h3>
-        <p>কিছু ক্ষেত্রে no বা not ব্যবহার না করেও negative করা যায়:</p>
-        <div class="example">
-          He never tells a lie.<br>
-          None of them was present there.<br>
-          He is still unable to walk.<br>
-          I know nothing about this matter.
-        </div>
-      </div>
-    </section>
-
-    <!-- INTERROGATIVE -->
-    <section class="section" id="interrogative">
-      <h2>অধ্যায় ২৬ — Interrogative Sentences</h2>
-      <button class="voice-btn" onclick="speakSection('interrogative')">🔊 এই অংশ শুনুন</button>
-
-      <div class="card">
-        <h3>[৩০১] Interrogative Sentence কী?</h3>
-        <p>যে বাক্য প্রশ্ন করে তাকে Interrogative Sentence বলে। দুই প্রকার:</p>
-        <ul>
-          <li><strong>Yes/No Questions</strong> — উত্তর Yes বা No দিয়ে দেওয়া যায়।</li>
-          <li><strong>Wh-Questions</strong> — নির্দিষ্ট তথ্য চায়, Yes/No দিয়ে উত্তর হয় না।</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>[৩০২] Yes/No Question গঠনের নিয়ম</h3>
-
-        <h4>(a–d) Principal verb “to be” বা “to have” হলে</h4>
-        <div class="rule-box">
-          Verb-কে বাক্যের শুরুতে নিয়ে আসুন, তারপর Subject।
-        </div>
-        <table>
-          <tr><th>Statement</th><th>Interrogative</th></tr>
-          <tr><td>I am ill.</td><td>Am I ill?</td></tr>
-          <tr><td>We are happy.</td><td>Are we happy?</td></tr>
-          <tr><td>He is a teacher.</td><td>Is he a teacher?</td></tr>
-          <tr><td>I was absent.</td><td>Was I absent?</td></tr>
-          <tr><td>I have a pen.</td><td>Have I a pen?</td></tr>
-          <tr><td>He has a bicycle.</td><td>Has he a bicycle?</td></tr>
-          <tr><td>I had many books.</td><td>Had I many books?</td></tr>
-        </table>
-
-        <h4>(e) অন্যান্য Principal Verb</h4>
-        <div class="rule-box">
-          Present → Do / Does + Subject + base verb<br>
-          Past → Did + Subject + base verb
-        </div>
-        <div class="example">
-          You live in Delhi. → Do you live in Delhi?<br>
-          He plays cricket. → Does he play cricket? (plays নয়)<br>
-          He called you. → Did he call you? (called নয়)
-        </div>
-        <p>Verb form পরিবর্তন:</p>
-        <div class="example">
-          play → do + play &nbsp;|&nbsp; plays → does + play<br>
-          sang → did + sing &nbsp;|&nbsp; played → did + play
-        </div>
-
-        <h4>(f) “to have”-এর বিকল্প রূপ</h4>
-        <div class="note-box">
-          Have I a pen? = Do I have a pen?<br>
-          Has he a bicycle? = Does he have a bicycle?<br>
-          Had I many books? = Did I have many books?
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>[৩০৩] Auxiliary Verb থাকলে</h3>
-        <div class="rule-box">
-          Auxiliary-কে শুরুতে নিয়ে আসুন। একাধিক auxiliary থাকলে শুধু <strong>প্রথমটি</strong> সামনে আসে।
-        </div>
-        <div class="example">
-          I am playing. → Am I playing?<br>
-          You have done this. → Have you done this?<br>
-          He can walk now. → Can he walk now?<br>
-          You should have gone there. → Should you have gone there?<br>
-          He has been living here for five years. → Has he been living here for five years?
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>[৩০৪] Negative Interrogative</h3>
-        <div class="rule-box">
-          <strong>Noun Subject:</strong> not সাধারণত Noun-এর আগে বসে।<br>
-          <strong>Pronoun Subject:</strong> not Pronoun-এর পরে বসে।
-        </div>
-        <table>
-          <tr><th>Statement</th><th>Interrogative</th></tr>
-          <tr><td>Prafulla is not strong.</td><td>Is not Prafulla strong?</td></tr>
-          <tr><td>He is not strong.</td><td>Is he not strong?</td></tr>
-          <tr><td>The boys were not present.</td><td>Were not the boys present there?</td></tr>
-          <tr><td>You did not eat.</td><td>Did you not eat?</td></tr>
-        </table>
-        <div class="note-box">
-          <strong>Contracted form</strong> সবসময় Subject-এর আগে বসে (Noun বা Pronoun যাই হোক):
-          <div class="example">Wasn't Biren ill? &nbsp; Isn't he strong?<br>Don't the boys know it? &nbsp; Didn't they go there?</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WH-WORDS -->
-    <section class="section" id="whwords">
-      <h2>Wh-Question Words — সম্পূর্ণ বিবরণ</h2>
-      <button class="voice-btn" onclick="speakSection('whwords')">🔊 এই অংশ শুনুন</button>
-
-      <div class="card">
-        <h3>[৩০৫] শ্রেণিবিভাগ</h3>
-        <ul>
-          <li><strong>Interrogative Pronouns:</strong> who, which, what, whom, whose</li>
-          <li><strong>Interrogative Adjectives:</strong> what, which, whose</li>
-          <li><strong>Interrogative Adverbs:</strong> where, when, how, why</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>A. Who (কে?)</h3>
-        <p>Interrogative Pronoun — শুধুমাত্র ব্যক্তির জন্য Subject হিসেবে ব্যবহৃত হয়। অনির্দিষ্ট।</p>
-        <div class="example">Who is that man? → He is Ramen, my brother.<br>Who took my book? → Subir took it.</div>
-        <div class="exception-box">
-          <strong>গুরুত্বপূর্ণ:</strong> Who nominative (subject) হিসেবে ব্যবহৃত হলে auxiliary লাগে না।
-          <div class="example">Who goes there? &nbsp; Who came here?</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>B. Whom (কাহাকে?)</h3>
-        <p>Who-এর object form। শুধুমাত্র ব্যক্তির জন্য।</p>
-        <div class="example">Whom do you want? → I want Mr Mukherjee.<br>Whom did you see? → I saw his son.</div>
-        <div class="note-box">
-          Formal-এ “Whom” সঠিক। কথ্য ভাষায় “Who” object হিসেবেও চলে:
-          <div class="example">Whom did you meet? (formal) = Who did you meet? (common)</div>
-        </div>
-        <div class="note-box">
-          Preposition সাধারণত whom-এর আগে থাকে, কিন্তু কথ্যতে preposition শেষে যায় এবং whom → who হয়:
-          <div class="example">With whom did you go? → Who did you go with?</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>C. Whose (কাহার? / কাহাদের?)</h3>
-        <p>Who-এর possessive। Adjective ও Pronoun দুইভাবেই ব্যবহৃত হয়।</p>
-        <div class="example">Whose books are these? (adj.) → They are mine.<br>Whose are these? (pron.) → They are mine.<br>Whose house is this? → It is Amal’s.</div>
-      </div>
-
-      <div class="card">
-        <h3>D. What (কি?)</h3>
-        <p>বস্তু, পেশা, আকার, রং, পরিমাণ ইত্যাদি জানতে ব্যবহৃত হয়।</p>
-        <div class="example">
-          What is this? → This is a box.<br>
-          What is he? → He is a doctor. (পেশা)<br>
-          What papers do you read?<br>
-          What height is this building?<br>
-          What colour do you want?
-        </div>
-        <div class="note-box">Preposition সাধারণত শেষে যায়: What did you lift it with?</div>
-      </div>
-
-      <div class="card">
-        <h3>E. Which (কোনটি?)</h3>
-        <p>সীমিত বিকল্প থেকে বেছে নেওয়ার জন্য (person ও thing উভয়)।</p>
-        <div class="example">Which of these do you want?<br>Which boy did it?<br>Which college did he go to?</div>
-        <div class="rule-box">
-          Who / What সাধারণ জিজ্ঞাসায়, Which সীমিত পছন্দের ক্ষেত্রে।
-        </div>
-        <div class="note-box">
-          <strong>পার্থক্য মনে রাখুন:</strong><br>
-          Who is he? → নাম বা পরিচয়<br>
-          What is he? → পেশা বা সামাজিক অবস্থান<br>
-          Which is he? → নির্দিষ্ট দলের মধ্যে কোন জন
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>F. Why (কেন?)</h3>
-        <p>“for what reason / with what purpose” — উত্তরে because / for আসে।</p>
-        <div class="example">Why was he absent? → He was absent because he was ill.</div>
-        <div class="note-box">“What for” দিয়েও একই অর্থ প্রকাশ করা যায়: What did you go there for?</div>
-      </div>
-
-      <div class="card">
-        <h3>G. When (কখন?)</h3>
-        <p>সময় জানতে: at what time, on what occasion।</p>
-        <div class="example">When will he come? → He will come at 4 p.m.</div>
-      </div>
-
-      <div class="card">
-        <h3>H. Where (কোথায়?)</h3>
-        <p>স্থান, দিক, পরিস্থিতি জানতে।</p>
-        <div class="example">Where do you live? → I live in Delhi.<br>Where does he come from? → He comes from Delhi.</div>
-      </div>
-
-      <div class="card">
-        <h3>I. How (কিভাবে? / কিরূপ? / কতটা?)</h3>
-        <p>অনেক অর্থে ব্যবহৃত হয়:</p>
-        <ul>
-          <li><strong>উপায়/মাধ্যম:</strong> How did you come? → by train</li>
-          <li><strong>মাত্রা/পরিমাণ:</strong> How tall / How old / How often / How much / How many / How long / How fast</li>
-          <li><strong>স্বাস্থ্য/অবস্থা:</strong> How are you? How is your father?</li>
-          <li><strong>মতামত:</strong> How is the picture? How about going for a walk?</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>গুরুত্বপূর্ণ সাধারণ নিয়ম (Nominative vs অন্যান্য)</h3>
-        <div class="exception-box">
-          Who / What / Which যখন <strong>Subject (nominative)</strong> হয় তখন auxiliary লাগে না। অন্যান্য Wh-word-এ auxiliary অবশ্যই লাগে।
-          <div class="example">
-            Who goes there? (সঠিক) — Who does go there? (ভুল)<br>
-            When did you go there? (সঠিক) — When you went there? (ভুল)
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RULES SUMMARY -->
-    <section class="section" id="rules-summary">
-      <h2>সকল নিয়ম ও ব্যতিক্রম — একনজরে</h2>
-      <button class="voice-btn" onclick="speakSection('rules-summary')">🔊 এই অংশ শুনুন</button>
-
-      <div class="card">
-        <h3>Negative গঠন সারাংশ</h3>
-        <ol>
-          <li>to be → not verb-এর পরে</li>
-          <li>to have → no / অথবা do/does/did not + have</li>
-          <li>অন্যান্য verb → do/does/did not + base form</li>
-          <li>Auxiliary → not প্রথম auxiliary-এর পরে</li>
-          <li>Imperative → Do not + verb</li>
-          <li>no/not ছাড়া → never, none, nothing, unable ইত্যাদি</li>
-        </ol>
-      </div>
-
-      <div class="card">
-        <h3>Interrogative গঠন সারাংশ</h3>
-        <ol>
-          <li>to be / to have → Verb + Subject … ?</li>
-          <li>অন্যান্য → Do/Does/Did + Subject + base verb … ?</li>
-          <li>Auxiliary → Auxiliary + Subject … ? (শুধু প্রথম auxiliary)</li>
-          <li>Negative Interrogative → Noun-এর আগে not / Pronoun-এর পরে not; contracted form Subject-এর আগে</li>
-          <li>Wh-word + (auxiliary যদি প্রয়োজন) + Subject + … ?</li>
-          <li>Who/What/Which subject হলে auxiliary নেই</li>
-        </ol>
-      </div>
-
-      <div class="card">
-        <h3>ব্যতিক্রম ও নোট যা ভোলা যায় না</h3>
-        <ul>
-          <li>plays → does + play (s উঠে যায়)</li>
-          <li>played → did + play (ed উঠে যায়)</li>
-          <li>Have I a pen? = Do I have a pen?</li>
-          <li>Whom formal; Who কথ্যতে object হিসেবে চলে</li>
-          <li>Preposition + whom → Who … preposition (কথ্য)</li>
-          <li>Which = সীমিত পছন্দ; Who/What = সাধারণ</li>
-          <li>Who is he? (নাম) ≠ What is he? (পেশা) ≠ Which is he? (দলের মধ্যে)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PRACTICE 100 QUESTIONS -->
-    <section class="section" id="practice">
-      <h2>১০০টি অনুশীলনী প্রশ্ন</h2>
-      <p class="no-print">প্রতিটি প্রশ্নের উত্তর নির্বাচন করুন। শেষে “উত্তর দেখুন” চাপুন।</p>
-      <div id="practiceContainer"></div>
-      <div style="text-align:center;margin:2rem 0;" class="no-print">
-        <button class="btn btn-primary" onclick="checkPractice()">✅ সব উত্তর পরীক্ষা করুন</button>
-        <button class="btn btn-outline" onclick="resetPractice()">🔄 রিসেট</button>
-      </div>
-      <div id="practiceResult" class="score-box" style="display:none;"></div>
-    </section>
-
-    <!-- EXAM MODE -->
-    <section class="section" id="exam">
-      <h2>⏱️ Exam Mode</h2>
-      <div class="exam-controls no-print">
-        <label>প্রশ্নের সংখ্যা:
-          <select id="examQCount">
-            <option value="10">১০টি</option>
-            <option value="20" selected>২০টি</option>
-            <option value="30">৩০টি</option>
-            <option value="50">৫০টি</option>
-          </select>
-        </label>
-        <label>সময় (মিনিট):
-          <select id="examTime">
-            <option value="5">৫</option>
-            <option value="10" selected>১০</option>
-            <option value="15">১৫</option>
-            <option value="20">২০</option>
-          </select>
-        </label>
-        <button class="btn btn-success" id="startExamBtn" onclick="startExam()">পরীক্ষা শুরু করুন</button>
-        <button class="btn btn-danger" id="submitExamBtn" style="display:none;" onclick="submitExam()">জমা দিন</button>
-      </div>
-      <div id="examTimer" class="timer" style="display:none;"></div>
-      <div class="progress-bar no-print" id="examProgress" style="display:none;"><div class="progress-fill" id="examProgressFill" style="width:0%"></div></div>
-      <div id="examContainer"></div>
-      <div id="examResult" class="score-box" style="display:none;"></div>
-    </section>
-
-    <!-- CANVA DESIGN -->
-    <section class="section" id="canva-design">
-      <h2>🎨 Canva প্রেজেন্টেশন — ভিজ্যুয়াল পাঠ</h2>
-      <div class="card" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #0ea5e9;">
-        <h3>ইংরেজি ব্যাকরণ পাঠ — Canva Design</h3>
-        <p>এই প্রেজেন্টেশনটি Canva AI দিয়ে তৈরি করা হয়েছে। এতে Interjection, Negative ও Interrogative-এর নিয়মগুলো সুন্দর স্লাইডে সাজানো আছে।</p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:1.2rem 0;">
-          <a href="https://www.canva.com/d/A6KsqsKpi9IxNc8" target="_blank" class="btn btn-primary" style="text-decoration:none;">👁️ প্রেজেন্টেশন দেখুন</a>
-          <a href="https://www.canva.com/d/CIaLtNLd5wi6eed" target="_blank" class="btn btn-accent" style="text-decoration:none;">✏️ এডিট করুন (Canva)</a>
-        </div>
-        <p style="font-size:0.9rem; color:#64748b;">ডিজাইন ID: DAHVhL-oePo • ৪টি স্লাইড</p>
-      </div>
-      <div class="card">
-        <h3>কীভাবে ব্যবহার করবেন</h3>
-        <ol>
-          <li><strong>দেখুন</strong> বাটনে ক্লিক করে প্রেজেন্টেশন মোডে দেখুন।</li>
-          <li><strong>এডিট করুন</strong> বাটনে ক্লিক করে Canva-তে নিজের মতো করে পরিবর্তন করুন (রং, টেক্সট, ছবি যোগ করুন)।</li>
-          <li>ক্লাসরুমে প্রজেক্টর দিয়ে দেখাতে পারেন অথবা PDF এক্সপোর্ট করে প্রিন্ট করতে পারেন।</li>
-        </ol>
-      </div>
-      <div class="card">
-        <h3>Figma সম্পর্কে</h3>
-        <p>Figma টুলস এই মুহূর্তে কানেক্টেড নয়। আপনি যদি Figma ফাইল শেয়ার করেন (লিংক দিয়ে), তাহলে UI/ফ্লোচার্ট বানাতে সাহায্য করতে পারব। এখনকার জন্য Canva প্রেজেন্টেশন ব্যবহার করুন।</p>
-      </div>
-    </section>
-
-    <!-- PRINT HELP -->
-    <section class="section" id="print-help">
-      <h2>প্রিন্ট গাইড</h2>
-      <div class="card">
-        <p>প্রিন্ট বাটন চাপলে বা Ctrl+P দিলে শুধু পাঠের বিষয়বস্তু প্রিন্ট হবে। মেনু, বাটন ও কুইজ লুকিয়ে যাবে।</p>
-        <p>সবচেয়ে ভালো ফলাফলের জন্য:</p>
-        <ul>
-          <li>প্রথমে যে অধ্যায়গুলো প্রিন্ট করতে চান সেগুলো খুলে রাখুন (অথবা সব খুলে রাখুন)।</li>
-          <li>Browser-এ “Background graphics” চালু রাখুন যদি রঙ চান।</li>
-          <li>A4 পোর্ট্রেট মোড সুপারিশ করা হয়।</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-</div>
-
-<script>
-// ========== DATA: 100 QUESTIONS ==========
-const allQuestions = [
-  // Interjections 1-10
-  {q:"‘Alas!’ কোন আবেগ প্রকাশ করে?", opts:["আনন্দ","দুঃখ","অনুমোদন","মনোযোগ"], ans:1},
-  {q:"‘Hurrah!’ কোন আবেগ প্রকাশ করে?", opts:["দুঃখ","আনন্দ","ঘৃণা","সতর্কতা"], ans:1},
-  {q:"‘Fie!’ কোন আবেগ প্রকাশ করে?", opts:["আনন্দ","দুঃখ","তিরস্কার/ঘৃণা","ডাক"], ans:2},
-  {q:"‘Hark!’ ও ‘Hush!’ কী প্রকাশ করে?", opts:["আনন্দ","মনোযোগ","দুঃখ","অনুমোদন"], ans:1},
-  {q:"‘Bravo!’ কী প্রকাশ করে?", opts:["দুঃখ","অনুমোদন","ঘৃণা","ডাক"], ans:1},
-  {q:"‘How awful!’ কি Interjection?", opts:["হ্যাঁ, বিশুদ্ধ Interjection","না, এটি elliptical sentence","হ্যাঁ, phrase","না, এটি verb"], ans:1},
-  {q:"‘Well done!’ এর পূর্ণ রূপ কী?", opts:["It is done well!","Well it is done!","Done well it is!","It well done!"], ans:0},
-  {q:"‘For shame!’ কোন ধরনের?", opts:["Interjection","Interjectional Phrase","Elliptical sentence","None"], ans:1},
-  {q:"‘Good heavens!’ কোন ধরনের?", opts:["Verb","Interjectional Phrase","Noun","Adjective"], ans:1},
-  {q:"Interjection বাক্যের construction-এ প্রবেশ করে কি?", opts:["হ্যাঁ","না","কখনো কখনো","সবসময়"], ans:1},
-
-  // Negative 11-35
-  {q:"‘I am a student.’-এর negative কী?", opts:["I am no student.","I am not a student.","I do not am a student.","I not am a student."], ans:1},
-  {q:"‘He is happy.’-এর negative?", opts:["He is not happy.","He does not happy.","He not is happy.","He is no happy."], ans:0},
-  {q:"‘I have a car.’-এর দুটি সঠিক negative কোনগুলো?", opts:["I have no car / I do not have a car","I have not car / I no have car","I not have car / I have not a car","I does not have car"], ans:0},
-  {q:"‘He has a sister.’-এর negative (do-form)?", opts:["He does not has a sister.","He does not have a sister.","He do not have a sister.","He not has a sister."], ans:1},
-  {q:"‘They played football.’-এর negative?", opts:["They did not played football.","They did not play football.","They do not played football.","They not played football."], ans:1},
-  {q:"‘She writes letters.’-এর negative?", opts:["She does not writes letters.","She do not write letters.","She does not write letters.","She not writes letters."], ans:2},
-  {q:"‘You will be happy.’-এর negative?", opts:["You will not be happy.","You not will be happy.","You will be not happy.","You do not will be happy."], ans:0},
-  {q:"‘He can sing.’-এর negative?", opts:["He can not sing. / He cannot sing.","He does not can sing.","He not can sing.","He can does not sing."], ans:0},
-  {q:"একাধিক auxiliary থাকলে ‘not’ কোথায় বসে?", opts:["শেষ auxiliary-এর পরে","প্রথম auxiliary-এর পরে","মূল verb-এর পরে","Subject-এর পরে"], ans:1},
-  {q:"‘You should have done this.’-এর negative?", opts:["You should not have done this.","You should have not done this.","You not should have done this.","You should have done not this."], ans:0},
-  {q:"Negative Imperative কীভাবে হয়?", opts:["Not + verb","Do not + verb","Does not + verb","No + verb"], ans:1},
-  {q:"‘Run in the sun.’-এর negative imperative?", opts:["Not run in the sun.","Do not run in the sun.","Does not run in the sun.","No run in the sun."], ans:1},
-  {q:"‘He never tells a lie.’ — এটি negative কিভাবে?", opts:["no ব্যবহার করে","not ব্যবহার করে","never ব্যবহার করে","none ব্যবহার করে"], ans:2},
-  {q:"‘There is a school.’-এর negative?", opts:["There is not a school.","There is no school.","There does not is a school.","Both A and B possible"], ans:3},
-  {q:"‘I had money.’-এর do-form negative?", opts:["I did not had money.","I did not have money.","I do not had money.","I not had money."], ans:1},
-  {q:"‘She is reading.’-এর negative?", opts:["She is not reading.","She does not reading.","She not is reading.","She is reading not."], ans:0},
-  {q:"‘They have done the work.’-এর negative?", opts:["They have not done the work.","They do not have done the work.","They not have done the work.","They have done not the work."], ans:0},
-  {q:"‘He may come.’-এর negative?", opts:["He may not come.","He does not may come.","He not may come.","He may does not come."], ans:0},
-  {q:"‘Open the door.’-এর negative?", opts:["Not open the door.","Do not open the door.","Does not open the door.","No open the door."], ans:1},
-  {q:"‘I know something.’-এর negative (nothing দিয়ে)?", opts:["I know not something.","I know nothing.","I do not know something.","I nothing know."], ans:1},
-  {q:"‘None of them was present.’ — এটি কী?", opts:["Affirmative","Negative (no/not ছাড়া)","Interrogative","Imperative"], ans:1},
-  {q:"‘You will have a holiday.’-এর ‘no’ দিয়ে negative?", opts:["You will have not holiday.","You will have no holiday.","You will no have holiday.","You not will have holiday."], ans:1},
-  {q:"‘He has been coming.’-এর negative?", opts:["He has not been coming.","He has been not coming.","He not has been coming.","He does not has been coming."], ans:0},
-  {q:"‘I was present.’-এর negative?", opts:["I was not present.","I did not was present.","I not was present.","I was present not."], ans:0},
-  {q:"‘They are students.’-এর negative?", opts:["They are not students.","They do not are students.","They not are students.","They are no students. (also possible)"], ans:0},
-
-  // Interrogative Yes/No 36-55
-  {q:"‘He is well.’-এর interrogative?", opts:["Is he well?","Does he is well?","He is well?","Is well he?"], ans:0},
-  {q:"‘You have a car.’-এর interrogative (have-form)?", opts:["Have you a car?","Do you have a car?","Both A and B","Has you a car?"], ans:2},
-  {q:"‘They play cricket.’-এর interrogative?", opts:["Do they play cricket?","Does they play cricket?","Play they cricket?","Are they play cricket?"], ans:0},
-  {q:"‘She goes to school.’-এর interrogative?", opts:["Does she goes to school?","Does she go to school?","Do she go to school?","Goes she to school?"], ans:1},
-  {q:"‘He called you.’-এর interrogative?", opts:["Did he called you?","Did he call you?","Does he call you?","Called he you?"], ans:1},
-  {q:"‘You were present.’-এর interrogative?", opts:["Were you present?","Did you were present?","Are you present?","Was you present?"], ans:0},
-  {q:"‘He can swim.’-এর interrogative?", opts:["Can he swim?","Does he can swim?","Is he can swim?","He can swim?"], ans:0},
-  {q:"‘They have finished.’-এর interrogative?", opts:["Have they finished?","Do they have finished?","Did they finished?","Are they finished?"], ans:0},
-  {q:"‘You should have gone.’-এর interrogative?", opts:["Should you have gone?","Have you should gone?","Did you should have gone?","Should have you gone?"], ans:0},
-  {q:"‘He has been living here.’-এর interrogative?", opts:["Has he been living here?","Has been he living here?","Does he has been living here?","Is he has been living here?"], ans:0},
-  {q:"‘Prafulla is not strong.’-এর negative interrogative (noun)?", opts:["Is not Prafulla strong?","Is Prafulla not strong?","Does not Prafulla strong?","Isn't Prafulla is strong?"], ans:0},
-  {q:"‘He is not strong.’-এর negative interrogative (pronoun)?", opts:["Is not he strong?","Is he not strong?","Does he not strong?","Isn't he is strong?"], ans:1},
-  {q:"Contracted negative interrogative কোথায় বসে?", opts:["Subject-এর পরে","Subject-এর আগে","Verb-এর পরে","কোনো নিয়ম নেই"], ans:1},
-  {q:"‘The boys were not present.’-এর negative interrogative?", opts:["Were not the boys present?","Were the boys not present?","Both possible, but rule prefers A for noun","Did not the boys present?"], ans:0},
-  {q:"‘You did not eat.’-এর negative interrogative?", opts:["Did not you eat?","Did you not eat?","Both acceptable","Do you not eat?"], ans:1},
-  {q:"‘I am taller than you.’-এর interrogative?", opts:["Am I taller than you?","Do I am taller than you?","Is I taller than you?","Are I taller than you?"], ans:0},
-  {q:"‘She has a pen.’-এর do-form interrogative?", opts:["Does she has a pen?","Does she have a pen?","Do she have a pen?","Has she a pen? only"], ans:1},
-  {q:"‘They left the place.’-এর interrogative?", opts:["Did they left the place?","Did they leave the place?","Do they leave the place?","Left they the place?"], ans:1},
-  {q:"‘He will come tomorrow.’-এর interrogative?", opts:["Will he come tomorrow?","Does he will come tomorrow?","Is he will come tomorrow?","He will come tomorrow?"], ans:0},
-  {q:"‘The child was crying.’-এর interrogative?", opts:["Was the child crying?","Did the child was crying?","Is the child crying?","Was crying the child?"], ans:0},
-
-  // Wh-words 56-100
-  {q:"Who শুধুমাত্র কীসের জন্য ব্যবহৃত হয়?", opts:["বস্তু","ব্যক্তি (person)","স্থান","সময়"], ans:1},
-  {q:"Whom কোন form?", opts:["Subject form of who","Object form of who","Possessive of who","Adjective form"], ans:1},
-  {q:"‘Whom did you see?’-এর কথ্য রূপ?", opts:["Who did you see?","What did you see?","Which did you see?","Whose did you see?"], ans:0},
-  {q:"Whose কীসের form?", opts:["Object of who","Possessive of who","Subject of who","Adverb of who"], ans:1},
-  {q:"‘What is he?’ সাধারণত কী জানতে চায়?", opts:["নাম","পেশা/সামাজিক অবস্থান","দলের মধ্যে কোন জন","স্থান"], ans:1},
-  {q:"‘Who is he?’ কী জানতে চায়?", opts:["পেশা","নাম বা পরিচয়","রঙ","সময়"], ans:1},
-  {q:"‘Which is he?’ কী জানতে চায়?", opts:["নাম","পেশা","নির্দিষ্ট দলের মধ্যে কোন জন","স্থান"], ans:2},
-  {q:"Which কখন ব্যবহার হয়?", opts:["সাধারণ জিজ্ঞাসায়","সীমিত বিকল্প থেকে বেছে নিতে","শুধু ব্যক্তির জন্য","শুধু বস্তুর জন্য"], ans:1},
-  {q:"Why-এর অর্থ কী?", opts:["কখন","কোথায়","কেন / কি কারণে","কিভাবে"], ans:2},
-  {q:"When কী জানতে চায়?", opts:["স্থান","সময়","কারণ","উপায়"], ans:1},
-  {q:"Where কী জানতে চায়?", opts:["সময়","স্থান/দিক","কারণ","পরিমাণ"], ans:1},
-  {q:"How-এর একটি অর্থ নয় কোনটি?", opts:["উপায়","মাত্রা","স্বাস্থ্য","নাম"], ans:3},
-  {q:"‘How tall is the building?’ — How এখানে কী বোঝায়?", opts:["উপায়","মাত্রা/পরিমাণ","স্বাস্থ্য","মতামত"], ans:1},
-  {q:"Who subject হলে auxiliary লাগে কি?", opts:["হ্যাঁ, সবসময়","না","কখনো কখনো","শুধু past-এ"], ans:1},
-  {q:"‘Who goes there?’ সঠিক কি?", opts:["হ্যাঁ","না, Who does go there? হতে হবে","না, Who go there?","না, Does who go?"], ans:0},
-  {q:"‘When you went there?’ সঠিক কি?", opts:["হ্যাঁ","না, When did you go there? হতে হবে","হ্যাঁ, past-এ","না, When you did go?"], ans:1},
-  {q:"Preposition + whom-এর কথ্য রূপ?", opts:["Whom … preposition","Who … preposition","What … preposition","Which … preposition"], ans:1},
-  {q:"‘With whom did you go?’-এর কথ্য রূপ?", opts:["Who did you go with?","Whom did you go?","With who did you go?","Who with did you go?"], ans:0},
-  {q:"‘What delayed you?’ — What এখানে কী?", opts:["Object","Subject","Adjective","Adverb"], ans:1},
-  {q:"‘Which boy did it?’ — Which এখানে কী?", opts:["Pronoun only","Adjective","Adverb","Verb"], ans:1},
-  {q:"‘Whose books are these?’ — Whose এখানে কী?", opts:["Pronoun","Adjective","Adverb","Conjunction"], ans:1},
-  {q:"‘Whose are these?’ — Whose এখানে কী?", opts:["Adjective","Pronoun","Adverb","Preposition"], ans:1},
-  {q:"‘How are you?’ — How এখানে কী বোঝায়?", opts:["উপায়","স্বাস্থ্য/অবস্থা","পরিমাণ","সময়"], ans:1},
-  {q:"‘How about going for a walk?’ — এটি কী?", opts:["প্রস্তাব/মতামত চাওয়া","সময় জিজ্ঞাসা","স্থান জিজ্ঞাসা","কারণ জিজ্ঞাসা"], ans:0},
-  {q:"‘What for did you go there?’ = ?", opts:["When did you go?","Why did you go?","Where did you go?","How did you go?"], ans:1},
-  {q:"‘He is a doctor.’ — সঠিক প্রশ্ন?", opts:["Who is he?","What is he?","Which is he?","Whose is he?"], ans:1},
-  {q:"‘The man on the extreme right.’ — কোন প্রশ্নের উত্তর?", opts:["Who is he?","What is he?","Which is he?","Whose is he?"], ans:2},
-  {q:"‘I live in Delhi.’ — সঠিক প্রশ্ন?", opts:["When do you live?","Where do you live?","Why do you live?","How do you live?"], ans:1},
-  {q:"‘He was absent because he was ill.’ — সঠিক প্রশ্ন?", opts:["When was he absent?","Where was he absent?","Why was he absent?","How was he absent?"], ans:2},
-  {q:"‘She reached at night.’ — সঠিক প্রশ্ন?", opts:["Where did she reach?","When did she reach?","Why did she reach?","How did she reach?"], ans:1},
-  {q:"‘I crossed the river in a ferry.’ — সঠিক প্রশ্ন?", opts:["When did you cross?","How did you cross the river?","Why did you cross?","Where did you cross?"], ans:1},
-  {q:"‘Sandip has painted the drawing.’ — সঠিক প্রশ্ন?", opts:["What has painted?","Who has painted the drawing?","Which has painted?","Whose has painted?"], ans:1},
-  {q:"‘It is Mr Sen’s house.’ — সঠিক প্রশ্ন?", opts:["Who house is it?","Whose house is it?","Which house is it?","What house is it?"], ans:1},
-  {q:"‘He drives 40 km per hour.’ — সঠিক প্রশ্ন?", opts:["How long does he drive?","How fast does he drive?","How often does he drive?","How much does he drive?"], ans:1},
-  {q:"‘She took five mangoes.’ — সঠিক প্রশ্ন?", opts:["How much mangoes?","How many mangoes did she take?","How long mangoes?","How far mangoes?"], ans:1},
-  {q:"‘The author is W.W. Jacobs.’ — সঠিক প্রশ্ন?", opts:["What wrote the story?","Who wrote ‘The Monkey’s Paw’?","Which wrote?","Whose wrote?"], ans:1},
-  {q:"‘He arrived late due to traffic jam.’ — সঠিক প্রশ্ন?", opts:["When did he arrive late?","Why did he arrive late?","Where did he arrive late?","How did he arrive late?"], ans:1},
-  {q:"‘I want the red pen.’ (three pens) — সঠিক প্রশ্ন?", opts:["What pen do you want?","Which of the three pens do you want?","Who pen do you want?","Whose pen?"], ans:1},
-  {q:"‘He has been working for three hours.’ — সঠিক প্রশ্ন?", opts:["How long has he been working?","How often has he been working?","How much has he been working?","How far has he been working?"], ans:0},
-  {q:"‘This book was written by Rabindranath.’ — সঠিক প্রশ্ন?", opts:["Who was this book written?","By whom was this book written?","What was this book written?","Which was this book written?"], ans:1},
-  {q:"‘Everybody loves his country.’ — সঠিক প্রশ্ন (negative sense)?", opts:["Who loves his country?","Who does not love his country?","What loves his country?","Which loves?"], ans:1},
-  {q:"‘The train runs at 80 miles per hour.’ — সঠিক প্রশ্ন?", opts:["How long does the train run?","How fast does the train run?","How often does the train run?","How much does the train run?"], ans:1},
-  {q:"‘I am going to Patna tomorrow.’ — সঠিক প্রশ্ন?", opts:["When are you going?","Where are you going tomorrow?","Why are you going?","How are you going?"], ans:1},
-  {q:"‘It is now 5 o’clock.’ — সঠিক প্রশ্ন?", opts:["When is the time?","What is the time now?","Where is the time?","How is the time?"], ans:1},
-  {q:"‘He stayed home because it was raining.’ — সঠিক প্রশ্ন?", opts:["When did he stay?","Why did he stay at home?","Where did he stay?","How did he stay?"], ans:1},
-  {q:"Nominative Wh-word (who/what/which as subject) এর সাথে কোনটি সত্য?", opts:["Auxiliary অবশ্যই লাগে","Auxiliary লাগে না","শুধু do লাগে","শুধু did লাগে"], ans:1}
-];
-
-// ========== APP LOGIC ==========
-const sidebar = document.getElementById('sidebar');
-const main = document.getElementById('main');
-const menuBtn = document.getElementById('menuBtn');
-const pageTitle = document.getElementById('pageTitle');
-const sections = document.querySelectorAll('.section');
-const navItems = document.querySelectorAll('.nav-item');
-
-menuBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-  sidebar.classList.toggle('collapsed');
-  main.classList.toggle('full');
-});
-
-navItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const sec = item.dataset.section;
-    sections.forEach(s => s.classList.remove('active'));
-    document.getElementById(sec).classList.add('active');
-    navItems.forEach(n => n.classList.remove('active'));
-    item.classList.add('active');
-    pageTitle.textContent = item.textContent.replace(/[^\u0980-\u09FF\w\s•\-]/g,'').trim() || item.textContent;
-    if (window.innerWidth < 768) {
-      sidebar.classList.remove('open');
-      sidebar.classList.add('collapsed');
-      main.classList.add('full');
-    }
-    window.scrollTo(0,0);
-  });
-});
-
-// Voice
-let speaking = false;
-function speakText(text, lang = 'bn-IN') {
-  if (!window.speechSynthesis) return alert('আপনার ব্রাউজারে Speech Synthesis সাপোর্ট নেই।');
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = lang;
-  u.rate = 0.92;
-  u.pitch = 1;
-  // Try to find a Bengali or Indian voice
-  const voices = speechSynthesis.getVoices();
-  const bnVoice = voices.find(v => v.lang.startsWith('bn') || v.lang.includes('IN') || v.name.toLowerCase().includes('bengali'));
-  if (bnVoice) u.voice = bnVoice;
-  speaking = true;
-  u.onend = () => { speaking = false; };
-  speechSynthesis.speak(u);
-}
-
-function speakSection(id) {
-  const sec = document.getElementById(id);
-  let text = sec.innerText.replace(/🔊[^\n]*/g,'').replace(/\s+/g,' ').trim();
-  if (text.length > 1500) text = text.substring(0, 1500) + ' …';
-  speakText(text, 'bn-IN');
-}
-
-function toggleGlobalVoice() {
-  if (speaking) {
-    speechSynthesis.cancel();
-    speaking = false;
-    document.getElementById('globalVoiceBtn').textContent = '🔊 কণ্ঠস্বর চালু';
-  } else {
-    const active = document.querySelector('.section.active');
-    speakSection(active.id);
-    document.getElementById('globalVoiceBtn').textContent = '⏹️ বন্ধ করুন';
-  }
-}
-
-// Practice 100
-function renderPractice() {
-  const container = document.getElementById('practiceContainer');
-  container.innerHTML = '';
-  allQuestions.forEach((q, i) => {
-    const div = document.createElement('div');
-    div.className = 'quiz-card';
-    div.innerHTML = `
-      <div class="q-num">প্রশ্ন ${i+1}</div>
-      <p><strong>${q.q}</strong></p>
-      <div class="options" data-qid="${i}">
-        ${q.opts.map((o,j) => `
-          <label>
-            <input type="radio" name="pq${i}" value="${j}"> ${o}
-          </label>
-        `).join('')}
-      </div>
-    `;
-    container.appendChild(div);
-  });
-}
-renderPractice();
-
-function checkPractice() {
-  let correct = 0;
-  allQuestions.forEach((q, i) => {
-    const selected = document.querySelector(`input[name="pq${i}"]:checked`);
-    const labels = document.querySelectorAll(`.options[data-qid="${i}"] label`);
-    labels.forEach(l => { l.classList.remove('correct','wrong'); });
-    if (selected) {
-      const val = parseInt(selected.value);
-      if (val === q.ans) {
-        correct++;
-        labels[val].classList.add('correct');
-      } else {
-        labels[val].classList.add('wrong');
-        labels[q.ans].classList.add('correct');
-      }
-    } else {
-      labels[q.ans].classList.add('correct');
-    }
-  });
-  const res = document.getElementById('practiceResult');
-  res.style.display = 'block';
-  res.innerHTML = `<h3>ফলাফল</h3><p style="font-size:1.5rem;margin:0.5rem 0">${correct} / ${allQuestions.length}</p>
-    <p>সঠিকতার হার: ${Math.round(correct/allQuestions.length*100)}%</p>`;
-  res.scrollIntoView({behavior:'smooth'});
-}
-
-function resetPractice() {
-  document.querySelectorAll('#practiceContainer input').forEach(i => i.checked = false);
-  document.querySelectorAll('#practiceContainer label').forEach(l => l.classList.remove('correct','wrong'));
-  document.getElementById('practiceResult').style.display = 'none';
-}
-
-// Exam Mode
-let examQuestions = [];
-let examTimerInterval = null;
-let examSecondsLeft = 0;
-
-function startExam() {
-  const count = parseInt(document.getElementById('examQCount').value);
-  const minutes = parseInt(document.getElementById('examTime').value);
-  // shuffle and pick
-  const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
-  examQuestions = shuffled.slice(0, count);
-  examSecondsLeft = minutes * 60;
-
-  document.getElementById('startExamBtn').style.display = 'none';
-  document.getElementById('submitExamBtn').style.display = 'inline-flex';
-  document.getElementById('examTimer').style.display = 'inline-block';
-  document.getElementById('examProgress').style.display = 'block';
-  document.getElementById('examResult').style.display = 'none';
-
-  renderExam();
-  updateTimer();
-  examTimerInterval = setInterval(() => {
-    examSecondsLeft--;
-    updateTimer();
-    if (examSecondsLeft <= 0) {
-      clearInterval(examTimerInterval);
-      submitExam();
-    }
-  }, 1000);
-}
-
-function updateTimer() {
-  const m = Math.floor(examSecondsLeft / 60);
-  const s = examSecondsLeft % 60;
-  document.getElementById('examTimer').textContent = `সময় বাকি: ${m}:${s.toString().padStart(2,'0')}`;
-  const total = parseInt(document.getElementById('examTime').value) * 60;
-  const pct = ((total - examSecondsLeft) / total) * 100;
-  document.getElementById('examProgressFill').style.width = pct + '%';
-}
-
-function renderExam() {
-  const container = document.getElementById('examContainer');
-  container.innerHTML = '';
-  examQuestions.forEach((q, i) => {
-    const div = document.createElement('div');
-    div.className = 'quiz-card';
-    div.innerHTML = `
-      <div class="q-num">প্রশ্ন ${i+1} / ${examQuestions.length}</div>
-      <p><strong>${q.q}</strong></p>
-      <div class="options" data-eqid="${i}">
-        ${q.opts.map((o,j) => `
-          <label>
-            <input type="radio" name="eq${i}" value="${j}"> ${o}
-          </label>
-        `).join('')}
-      </div>
-    `;
-    container.appendChild(div);
-  });
-}
-
-function submitExam() {
-  clearInterval(examTimerInterval);
-  let correct = 0;
-  examQuestions.forEach((q, i) => {
-    const selected = document.querySelector(`input[name="eq${i}"]:checked`);
-    const labels = document.querySelectorAll(`.options[data-eqid="${i}"] label`);
-    labels.forEach(l => l.classList.remove('correct','wrong'));
-    if (selected) {
-      const val = parseInt(selected.value);
-      if (val === q.ans) {
-        correct++;
-        labels[val].classList.add('correct');
-      } else {
-        labels[val].classList.add('wrong');
-        labels[q.ans].classList.add('correct');
-      }
-    } else {
-      labels[q.ans].classList.add('correct');
-    }
-  });
-  const res = document.getElementById('examResult');
-  res.style.display = 'block';
-  const pct = Math.round(correct / examQuestions.length * 100);
-  let grade = pct >= 80 ? 'Excellent 🌟' : pct >= 60 ? 'Good 👍' : pct >= 40 ? 'Average' : 'Needs Improvement';
-  res.innerHTML = `<h3>পরীক্ষার ফলাফল</h3>
-    <p style="font-size:1.8rem;margin:0.5rem 0">${correct} / ${examQuestions.length}</p>
-    <p>সঠিকতা: ${pct}% — ${grade}</p>`;
-  document.getElementById('submitExamBtn').style.display = 'none';
-  document.getElementById('startExamBtn').style.display = 'inline-flex';
-  document.getElementById('startExamBtn').textContent = 'আবার পরীক্ষা দিন';
-  res.scrollIntoView({behavior:'smooth'});
-}
-
-// Load voices
-speechSynthesis.onvoiceschanged = () => {};
-</script>
+  <div id="toast" class="toast"></div>
+  <script src="./script.js"></script>
 </body>
 </html>
